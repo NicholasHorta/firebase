@@ -1,0 +1,47 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="false">
+        <mat-toolbar>Menu</mat-toolbar>
+        <mat-nav-list>
+
+            <a mat-list-item (click)="drawer.close()" router-link="/">Home</a>
+            <a mat-list-item (click)="drawer.close()" router-link="/login">Login</a>
+            <a mat-list-item (click)="drawer.close()" router-link="/kanban">Kanban Demo</a>
+            <a mat-list-item (click)="drawer.close()" router-link="/customers">SSR Demo</a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar>
+            <button mat-icon-button type="button" aria-label="Toggle sidenav" (click)="drawer.toggle()"
+                *ngIf="isHandset$ | async">
+                <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+            <span class="logo" routerLink="/">Angular Fireship</span>
+            <span class="fill-space"></span>
+            <div *ngIf="!(isHandset$ | async)">
+                <a mat-button routerLink="/kanban">Kanban Demo</a>
+                <a mat-button routerLink="/customers">SSR Demo</a>
+                <a mat-button routerLink="/login">Login</a>
+            </div>
+
+            <button mat-icon-button [mat-menu-trigger-for]="menu" aria-label="Example icon-button">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu class="sidenav" #menu="matMenu">
+                <a href="" mat-menu-item>
+                    <span>Chat on Slack</span>
+                </a>
+                <a href="" mat-menu-item>
+                    <span>Code on Github</span>
+                </a>
+                <a href="" mat-menu-item>
+                    <span>Course on Fireship</span>
+                </a>
+                <a href="" mat-menu-item>
+                    <span>Watch on YT</span>
+                </a>
+            </mat-menu>
+        </mat-toolbar>
+        <ng-content></ng-content>
+    </mat-sidenav-content>
+</mat-sidenav-container>
