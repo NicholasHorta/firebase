@@ -6,6 +6,10 @@
         </button>
     </div>
 
+    <h5>OR</h5>
+
+    <app-email-login></app-email-login>
+
     <div *ngIf="afAuth.authState | async as user" class="logout">
         <p>You are logged in as <strong>{{user.displayName}}</strong></p>
         <p>under the following email: <strong>{{user.email}}</strong></p>
