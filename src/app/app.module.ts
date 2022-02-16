@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { HomePageComponent } from './home-page/home-page.component';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     SharedModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

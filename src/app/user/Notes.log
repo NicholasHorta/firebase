@@ -1,2 +1,7 @@
 Notes
 
+
+
+We're adding ngContent because we're passing the drag handle into the child component, this allows us to drag the board FROM WITHIN the board component itself 
+
+Basically repeating the same pattern as in the parent component too
