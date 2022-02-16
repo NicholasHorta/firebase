@@ -1,0 +1,16 @@
+Notes
+
+
+Angular Material dialog
+
+Popup modal that allows passing of data in and out 
+Common to have a lot of different dialogs 
+
+We'll be placing all of our dialogs in a single directory - dialogs
+
+The options added to generate them in a specific way
+
+--flat : Generated WITHOUT a directory
+--entry-component : Adds it to the entry components array in the ng-module 
+-s : Inline Stylesheet
+-t : Inline Template
